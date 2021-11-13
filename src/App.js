@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-materialize";
+import { Route, Switch } from "react-router-dom";
 import Menu from "./components/menu/menu";
 import Home from "./screens/home/home";
 import Courses from "./screens/courses/courses";
@@ -13,7 +13,6 @@ function App() {
         <Route exact path="/courses" component={Courses} />
         <Route exact path="/courses/novo" component={Formulario} />
       </Switch>
-      <Home />
     </div>
   );
 }

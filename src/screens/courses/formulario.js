@@ -31,7 +31,7 @@ function Formulario() {
           name="action"
         >
           Salvar
-          <i class="material-icons right">send</i>
+          <i class="material-icons right"></i>
         </button>
       </form>
     </div>
