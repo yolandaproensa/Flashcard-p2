@@ -4,7 +4,7 @@ import Card_reveal from "../../components/cards/card_reveal";
 import api from "../../services/api";
 
 function Courses() {
-  const [courses, setCourses] = useState([
+  const [cursos, setCursos] = useState([
     {
       colecaoId: 0,
       nome: "Nome do curso",
@@ -15,15 +15,15 @@ function Courses() {
   const pagina = 1;
 
   useEffect(() => {
-    api.get("/colecoes").then((response) => setCourses(response.data));
+    api.get("/colecoes").then((response) => setCursos(response.data));
   }, pagina);
   return (
     <>
       <h1>Cursos</h1>
 
       <div class="row">
-        {courses.map((index) => (
-          <Card_reveal curso={index} />
+        {cursos.map((curso) => (
+          <Card_reveal curso={curso} />
         ))}
         <Card_reveal />
       </div>

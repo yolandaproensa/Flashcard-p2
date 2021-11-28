@@ -6,9 +6,9 @@ function Card_reveal(props) {
   const handlerExcluir = (event) => {
     event.preventDefault();
 
-    if (window.confirm("Deseja excluir o curso" + props.index.nome + "?")) {
+    if (window.confirm("Deseja excluir o curso" + props.curso.nome + "?")) {
       api
-        .delete("/colecoes/" + props.index.colecaoId)
+        .delete("/colecoes/" + props.curso.colecaoId)
         .then(() => history.go(0));
     }
   };
@@ -29,7 +29,10 @@ function Card_reveal(props) {
           </span>
           <p>
             <Link to={"/courses/editar/" + props.colecaoId}> Editar </Link>
-            <a href="#"> Excluir </a>
+            <a href="#" onClick={handlerExcluir}>
+              {" "}
+              Excluir{" "}
+            </a>
           </p>
         </div>
         <div class="card-reveal">
